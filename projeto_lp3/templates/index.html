@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+
+{% block head %}<link rel="stylesheet" href="{{ url_for('static', filename='/assets/css/style.css') }}"> {% endblock %}
+{% block title %} MyWebSite{% endblock%}
+{% block content %}<nav>
+    <h1 id="logo">MyWebSite</h1>
+    <ul>
+        <strong><li>home</li></strong>
+        <a href="/carrinho"><li>carrinho</li></a>
+    </ul>
+</nav>
+<section class="produtos">
+    {% for produto in produtos%}
+    <div class="produto">
+        <img src="{{url_for('static',filename='/assets/img/'+ produto.img +'.jpg')}}" width="300px" alt="" id="f1" class="foto-produto">
+        <div class="desc">{{produto.nome}}</div>
+        <p>{{produto.desc}}</p>
+    </div>
+    {% endfor %}
+</section>{% endblock%}
+

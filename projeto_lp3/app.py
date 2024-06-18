@@ -1,15 +1,19 @@
-from flask import Flask
-#from validate_docbr import CPF
-app = Flask("Minha aplicação")
+from flask import Flask, render_template
 
-@app.route("/")
+app = Flask(__name__)
+
+@app.route('/')
 def home():
-    return '<h1>Home page</h1><a href="/contact"<h1>Outra pagina</h1></a>'
+    lista_produtos = [
+    {"nome": "AmbientChá", "desc": "Este chá é milagroso", "img": "1"},
+    {"nome": "CanabCreme", "desc": "Este creme é milagroso", "img": "2"},
+    {"nome": "VerdeGel", "desc": "Este gel é milagroso", "img": "3"},
+    {"nome": "GreenPlant", "desc": "Esta planta é milagrosa", "img": "4"},
+    {"nome": "PoliVita", "desc": "Este polivitaminico é milagroso", "img": "5"},
+    {"nome": "NatureLive", "desc": "Este produto é milagroso", "img": "6"},
+    ]
+    return render_template('index.html', produtos=lista_produtos)
 
-@app.route("/contact")
-def contact():
-    return "<h1>Contato</h1>"
-
-@app.route("/product")
-def product():
-    return "<h1>Produtos<h1/>"
+@app.route('/carrinho')
+def carrinho():
+    return render_template('../static/assets/html/carrinho.html')
