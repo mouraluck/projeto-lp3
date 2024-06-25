@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename='/assets/css/style.css') }}"> {% endblock%}
+
+{% block title %} Cadastro{% endblock %}
+{% block content%}
+<h1>Cadastro de produtos</h1>
+
+<form action="/cadastro" method="post" class="formulario">
+    <input type="text" name="nome" id="nome" placeholder="Digite o nome do produto">
+
+    <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Descreva aqui seu produto"></textarea>
+    <input type="submit" value="Enviar">
+</form>
+
+{% endblock %}

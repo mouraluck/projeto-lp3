@@ -7,13 +7,14 @@
     <title>MyWebSite</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='/assets/css/style.css') }}">
 </head>
-<body>
-    <nav>
-        <h1 id="logo">MyWebSite</h1>
-        <ul>
-            <a href="/"><li>home</li></a>
-            <strong><li>carrinho</li></strong>
-        </ul>
-    
-</body>
+
 </html>
+{% extends "base.html" %}
+{% block title %} Carrinho{% endblock %}
+{% block content%}
+<h1>Carrinho</h1>
+<p>carrinho de produtos</p>
+
+
+
+{% endblock %}

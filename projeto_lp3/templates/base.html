@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="ptbr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block head %}
-    <link rel="stylesheet" href="style.css" />
     <title>{% block title %}{% endblock %} - My Webpage</title>
     {% endblock %}
 </head>
+
 <body>
+    <nav>
+        <h1 id="logo">MyWebSite</h1>
+        <ul>
+            <a href="/">
+                <li>home</li>
+            </a>
+            <a href="/carrinho">
+                <li>carrinho</li>
+            </a>
+            <a href="/cadastro">
+                <li>cadastro</li>
+            </a>
+        </ul>
+    </nav>
     <div id="content">{% block content %}{% endblock %}</div>
     <div id="footer">
         {% block footer %}
@@ -17,4 +32,5 @@
         {% endblock %}
     </div>
 </body>
+
 </html>
